@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowQrCodeGenerator</class>
+ <widget class="QMainWindow" name="MainWindowQrCodeGenerator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gerador de QRCode</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCriar">
+    <property name="title">
+     <string>Criar</string>
+    </property>
+    <addaction name="actionvCard"/>
+    <addaction name="actionLink"/>
+   </widget>
+   <addaction name="menuCriar"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionvCard">
+   <property name="text">
+    <string>vCard</string>
+   </property>
+  </action>
+  <action name="actionLink">
+   <property name="text">
+    <string>Link</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

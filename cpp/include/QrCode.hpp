@@ -21,7 +21,8 @@
  *   Software.
  */
 
-#pragma once
+#ifndef QRCODE_HPP
+#define QRCODE_HPP
 
 #include <array>
 #include <cstdint>
@@ -554,3 +555,5 @@ class BitBuffer final : public std::vector<bool> {
 };
 
 }
+
+#endif
