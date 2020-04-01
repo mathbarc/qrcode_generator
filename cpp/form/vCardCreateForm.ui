@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>452</height>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,14 +30,14 @@
       <item row="0" column="1">
        <widget class="QLineEdit" name="lineEdit_name"/>
       </item>
-      <item row="1" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Endereço: </string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="3" column="1">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -49,7 +49,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="lineEdit_rua"/>
           </item>
           <item>
            <widget class="QLabel" name="label_4">
@@ -59,7 +59,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="lineEdit_num_rua">
             <property name="maximumSize">
              <size>
               <width>50</width>
@@ -80,7 +80,17 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_3"/>
+           <widget class="QLineEdit" name="lineEdit_bairro"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>CEP: </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_cep"/>
           </item>
          </layout>
         </item>
@@ -94,7 +104,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_4"/>
+           <widget class="QLineEdit" name="lineEdit_cidade"/>
           </item>
           <item>
            <widget class="QLabel" name="label_7">
@@ -104,7 +114,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_5">
+           <widget class="QLineEdit" name="lineEdit_estado">
             <property name="maximumSize">
              <size>
               <width>30</width>
@@ -119,6 +129,26 @@
          </layout>
         </item>
        </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Organização: </string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_org"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Cargo: </string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_cargo"/>
       </item>
      </layout>
     </widget>
@@ -137,6 +167,7 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6"/>
        </widget>
       </item>
       <item>
@@ -156,7 +187,9 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QWidget" name="widget_email" native="true"/>
+       <widget class="QWidget" name="widget_email" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_7"/>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton">
@@ -175,7 +208,9 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <widget class="QWidget" name="widget_sites" native="true"/>
+       <widget class="QWidget" name="widget_sites" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_8"/>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton_3">
@@ -196,6 +231,21 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_name</tabstop>
+  <tabstop>lineEdit_org</tabstop>
+  <tabstop>lineEdit_cargo</tabstop>
+  <tabstop>lineEdit_rua</tabstop>
+  <tabstop>lineEdit_num_rua</tabstop>
+  <tabstop>lineEdit_bairro</tabstop>
+  <tabstop>lineEdit_cep</tabstop>
+  <tabstop>lineEdit_cidade</tabstop>
+  <tabstop>lineEdit_estado</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_generate</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

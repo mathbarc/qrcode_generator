@@ -14,6 +14,7 @@ class TelephoneForm : public QWidget
     public:
         explicit TelephoneForm(QWidget *parent = nullptr);
         ~TelephoneForm();
+        std::string getVCardEntry() const ;
 
     private:
         Ui::TelephoneForm *ui;

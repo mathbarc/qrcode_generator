@@ -15,14 +15,10 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Telefone:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QComboBox" name="comboBox">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <item>
       <property name="text">
        <string>Celular</string>
@@ -30,7 +26,12 @@
      </item>
      <item>
       <property name="text">
-       <string>Fixo</string>
+       <string>Comercial</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Pessoal</string>
       </property>
      </item>
     </widget>
