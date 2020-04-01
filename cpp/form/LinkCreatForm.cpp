@@ -40,7 +40,7 @@ void LinkCreatForm::on_pushButton_clicked()
 
     std::ofstream file(pathToImage);
 
-    qrcodegen::QrCode qrCode = qrcodegen::QrCode::encodeText(url.c_str(), qrcodegen::QrCode::Ecc::QUARTILE);
+    qrcodegen::QrCode qrCode = qrcodegen::QrCode::encodeText(url.c_str(), qrcodegen::QrCode::Ecc::LOW);
 
     file << qrCode.toSvgString(4);
     file.close();
