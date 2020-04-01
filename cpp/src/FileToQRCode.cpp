@@ -22,11 +22,19 @@ int main(int argc, char** argv)
     inputFile.close();
 
 
-    qrcodegen::QrCode code = qrcodegen::QrCode::encodeText(content.c_str(), qrcodegen::QrCode::Ecc::QUARTILE);
+    try
+    {
+        qrcodegen::QrCode code = qrcodegen::QrCode::encodeText(content.c_str(), qrcodegen::QrCode::Ecc::LOW);
+        std::ofstream outputFile("out.svg");
+        outputFile << code.toSvgString(4);
+        outputFile.close();
 
-    std::ofstream outputFile("out.svg");
-    outputFile << code.toSvgString(4);
-    outputFile.close();
+    }
+    catch (std::exception& e)
+    {
+        std::cout<<e.what()<<std::endl;
+    }
+
 
     return 0;
 

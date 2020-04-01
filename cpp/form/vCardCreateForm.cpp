@@ -52,33 +52,29 @@ void vCardCreateForm::on_pushButton_generate_clicked()
     if(slName.size()> 0)
     {
         vCard += "N:";
-        if(slName.size()>=1)
+
+        for(int i = slName.size()-1; i >=0; i--)
         {
-            if(slName.size()>=2)
-            {
-                if(slName.size()>2)
-                {
-                    QStringList nameList;
-                    for(int i = 2; i<slName.size(); i++)
-                    {
-                        nameList.push_back(slName[i]);
-                    }
-                    vCard += nameList.join(" ").toStdString()+";";
-                }
-                vCard += slName[0].toStdString()+";";
-            }
-            vCard +=slName[1].toStdString();
-
-
-
-            vCard += "\n";
+            vCard += slName[i].toStdString()+";";
         }
+
+        vCard += "\n";
+
     }
 
-    vCard += "ORG:"+this->ui->lineEdit_org->text().toStdString()+";\n";
-    vCard += "ROLE:"+this->ui->lineEdit_cargo->text().toStdString()+";\n";
-    vCard += "ADR:;"+this->ui->lineEdit_rua->text().toStdString()+" "+this->ui->lineEdit_num_rua->text().toStdString()+";"+this->ui->lineEdit_bairro->text().toStdString()+
-             ";"+this->ui->lineEdit_cidade->text().toStdString()+";"+this->ui->lineEdit_estado->text().toStdString()+";"+this->ui->lineEdit_cep->text().toStdString()+";BR;\n";
+    if(!this->ui->lineEdit_org->text().isEmpty())
+        vCard += "ORG:"+this->ui->lineEdit_org->text().toStdString()+"\n";
+
+    if(!this->ui->lineEdit_cargo->text().isEmpty())
+        vCard += "ROLE:"+this->ui->lineEdit_cargo->text().toStdString()+"\n";
+
+    if(!this->ui->lineEdit_rua->text().isEmpty() && !this->ui->lineEdit_num_rua->text().isEmpty() &&
+       !this->ui->lineEdit_bairro->text().isEmpty() && !this->ui->lineEdit_cidade->text().isEmpty() &&
+       !this->ui->lineEdit_estado->text().isEmpty() && !this->ui->lineEdit_cep->text().isEmpty())
+    {
+        vCard += "ADR:"+this->ui->lineEdit_rua->text().toStdString()+" "+this->ui->lineEdit_num_rua->text().toStdString()+";"+this->ui->lineEdit_bairro->text().toStdString()+
+                 ";"+this->ui->lineEdit_cidade->text().toStdString()+";"+this->ui->lineEdit_estado->text().toStdString()+";"+this->ui->lineEdit_cep->text().toStdString()+";BR;\n";
+    }
 
     for(int i = 0; i < this->ui->widget_telephone->layout()->count(); i++)
     {
@@ -100,6 +96,7 @@ void vCardCreateForm::on_pushButton_generate_clicked()
 
 
     vCard += "END:VCARD\n";
+//    std::cout<<vCard<<std::endl;
 
     QString path = QFileDialog::getSaveFileName(this, "Arquivo QRCode", QDir::homePath()+"/QrCodeVCard.svg", "*.svg");
     if(path.isEmpty())
@@ -110,7 +107,7 @@ void vCardCreateForm::on_pushButton_generate_clicked()
 
     std::ofstream file(pathToImage);
 
-    qrcodegen::QrCode qrCode = qrcodegen::QrCode::encodeText(vCard.c_str(), qrcodegen::QrCode::Ecc::QUARTILE);
+    qrcodegen::QrCode qrCode = qrcodegen::QrCode::encodeText(vCard.c_str(), qrcodegen::QrCode::Ecc::LOW);
 
     file << qrCode.toSvgString(4);
     file.close();
