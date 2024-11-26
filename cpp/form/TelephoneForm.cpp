@@ -1,9 +1,7 @@
 #include "TelephoneForm.hpp"
 #include "ui_TelephoneForm.h"
 
-TelephoneForm::TelephoneForm(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::TelephoneForm)
+TelephoneForm::TelephoneForm(QWidget *parent) : QWidget(parent), ui(new Ui::TelephoneForm)
 {
     ui->setupUi(this);
 }
@@ -20,18 +18,18 @@ std::string TelephoneForm::getVCardEntry() const
 
     if(type == 0)
     {
-        entry+=";TYPE=CELL";
+        entry += ";TYPE=CELL";
     }
     else if(type == 1)
     {
-        entry+=";TYPE=WORK";
+        entry += ";TYPE=WORK";
     }
     else if(type == 2)
     {
-        entry+=";TYPE=HOME";
+        entry += ";TYPE=HOME";
     }
 
-    entry+=":"+this->ui->lineEdit_telephone->text().toStdString()+"\n";
+    entry += ":" + this->ui->lineEdit_telephone->text().toStdString() + "\n";
 
     return entry;
 }

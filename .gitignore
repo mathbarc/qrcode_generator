@@ -1,2 +1,6 @@
 /cpp/build
 /cpp/CMakeLists.txt.user
+compile_commands.json
+build/
+.cache/
+.clang-format

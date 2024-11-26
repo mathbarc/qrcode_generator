@@ -3,23 +3,24 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
     class LinkCreatForm;
 }
 
 class LinkCreatForm : public QWidget
 {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        explicit LinkCreatForm(QWidget *parent = nullptr);
-        ~LinkCreatForm();
+  public:
+    explicit LinkCreatForm(QWidget *parent = nullptr);
+    ~LinkCreatForm();
 
-    private slots:
-        void on_pushButton_clicked();
+  private slots:
+    void on_pushButton_clicked();
 
-    private:
-        Ui::LinkCreatForm *ui;
+  private:
+    Ui::LinkCreatForm *ui;
 };
 
 #endif // LINKCREATFORM_HPP
