@@ -1,4 +1,4 @@
-project(libQRGen)
+project(QRGen)
 cmake_minimum_required(VERSION 3.4)
 
 set( CMAKE_AUTOMOC ON )
@@ -14,6 +14,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include
 
 
 add_library(${PROJECT_NAME} STATIC src/QrCode.cpp)
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Core)
 
 add_executable(QrCodeGeneratorDemo src/QrCodeGeneratorDemo.cpp)
 target_link_libraries(QrCodeGeneratorDemo ${PROJECT_NAME})
