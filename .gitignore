@@ -1,2 +1,5 @@
 /cpp/build
 /cpp/CMakeLists.txt.user
+build
+compile_commands.json
+.cache

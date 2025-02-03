@@ -1,13 +1,12 @@
 #include "MainWindowQRCodeGenerator.hpp"
 #include <QApplication>
 
-int main(int argc, char** argv)
-{
-    QApplication app(argc, argv);
+int main(int argc, char **argv) {
+  QApplication app(argc, argv);
 
-    MainWindowQrCodeGenerator mainWindow;
+  MainWindowQrCodeGenerator mainWindow;
 
-    mainWindow.show();
+  mainWindow.show();
 
-    return app.exec();
+  return app.exec();
 }
