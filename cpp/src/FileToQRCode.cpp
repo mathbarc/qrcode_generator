@@ -1,15 +1,14 @@
-#include <iostream>
-#include <fstream>
 #include "QrCode.hpp"
+#include <fstream>
+#include <iostream>
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     if(argc < 1)
     {
-        std::cout<<"Uso: "<<argv[0]<<" arquivo"<<std::endl;
+        std::cout << "Uso: " << argv[0] << " arquivo" << std::endl;
         return -1;
     }
-
 
     std::ifstream inputFile(argv[1]);
 
@@ -17,10 +16,9 @@ int main(int argc, char** argv)
 
     while(std::getline(inputFile, line))
     {
-        content += line+"\n";
+        content += line + "\n";
     }
     inputFile.close();
-
 
     try
     {
@@ -28,16 +26,11 @@ int main(int argc, char** argv)
         std::ofstream outputFile("out.svg");
         outputFile << code.toSvgString(4);
         outputFile.close();
-
     }
-    catch (std::exception& e)
+    catch(std::exception &e)
     {
-        std::cout<<e.what()<<std::endl;
+        std::cout << e.what() << std::endl;
     }
-
 
     return 0;
-
-
-
 }

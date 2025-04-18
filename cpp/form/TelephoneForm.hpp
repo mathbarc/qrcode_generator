@@ -3,21 +3,22 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
     class TelephoneForm;
 }
 
 class TelephoneForm : public QWidget
 {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        explicit TelephoneForm(QWidget *parent = nullptr);
-        ~TelephoneForm();
-        std::string getVCardEntry() const ;
+  public:
+    explicit TelephoneForm(QWidget *parent = nullptr);
+    ~TelephoneForm();
+    std::string getVCardEntry() const;
 
-    private:
-        Ui::TelephoneForm *ui;
+  private:
+    Ui::TelephoneForm *ui;
 };
 
 #endif // TELEPHONEFORM_HPP

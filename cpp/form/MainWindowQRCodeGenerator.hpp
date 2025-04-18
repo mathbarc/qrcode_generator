@@ -3,27 +3,28 @@
 
 #include <QMainWindow>
 
-namespace Ui {
+namespace Ui
+{
     class MainWindowQrCodeGenerator;
 }
 
 class MainWindowQrCodeGenerator : public QMainWindow
 {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        explicit MainWindowQrCodeGenerator(QWidget *parent = nullptr);
-        ~MainWindowQrCodeGenerator();
+  public:
+    explicit MainWindowQrCodeGenerator(QWidget *parent = nullptr);
+    ~MainWindowQrCodeGenerator();
 
-        void removeWidget();
+    void removeWidget();
 
-    private slots:
-        void on_actionvCard_triggered();
+  private slots:
+    void on_actionvCard_triggered();
 
-        void on_actionLink_triggered();
+    void on_actionLink_triggered();
 
-    private:
-        Ui::MainWindowQrCodeGenerator *ui;
+  private:
+    Ui::MainWindowQrCodeGenerator *ui;
 };
 
 #endif // MAINWINDOWQRCODEGENERATOR_HPP

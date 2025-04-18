@@ -1,17 +1,15 @@
 #include "LinkCreatForm.hpp"
 #include "ui_LinkCreatForm.h"
 
-#include <QMessageBox>
 #include <QFileDialog>
+#include <QMessageBox>
 
 #include <fstream>
 
 #include "QrCode.hpp"
 #include <QDir>
 
-LinkCreatForm::LinkCreatForm(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::LinkCreatForm)
+LinkCreatForm::LinkCreatForm(QWidget *parent) : QWidget(parent), ui(new Ui::LinkCreatForm)
 {
     ui->setupUi(this);
 }
@@ -31,10 +29,9 @@ void LinkCreatForm::on_pushButton_clicked()
         return;
     }
 
-    QString path = QFileDialog::getSaveFileName(this, "Arquivo QRCode", QDir::homePath()+"/QrCodeImage.svg", "*.svg");
+    QString path = QFileDialog::getSaveFileName(this, "Arquivo QRCode", QDir::homePath() + "/QrCodeImage.svg", "*.svg");
     if(path.isEmpty())
         return;
-
 
     std::string pathToImage = path.toStdString();
 
@@ -44,5 +41,4 @@ void LinkCreatForm::on_pushButton_clicked()
 
     file << qrCode.toSvgString(4);
     file.close();
-
 }
